@@ -782,10 +782,12 @@ nav {
 .social-icons {
   display: flex;
   gap: 15px;
+  text-decoration: none;
   margin-top: 20px;
 }
 
 .social-icons a {
+  text-decoration: none;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -799,8 +801,9 @@ nav {
   transition: 0.4s;
 }
 .social-icons a:hover {
-  background: #3b82f6;
+  background: #f8f9fc;
   transform: translateY(-8px);
+
   box-shadow: 0 0 25px rgba(59, 130, 246, 0.45);
 }
 .footer hr {
