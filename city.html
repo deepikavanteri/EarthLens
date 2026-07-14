@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./city.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="images/logo.png" alt="EarthLens Logo" />
+
+        <h2>Earth<span>Lens</span></h2>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="./about.html">About</a></li>
+
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+
+      <div class="search-box">
+        <input type="text" id="searchCity" placeholder="Search city..." />
+
+        <button id="searchBtn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <img id="cityImage" src="" alt="City Background" />
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="welcome">Explore the World</p>
+
+        <h1 id="cityName">Loading...</h1>
+
+        <h3 id="countryName">Country</h3>
+
+        <p id="cityDescription">
+          Discover beautiful places, live weather and amazing landscapes.
+        </p>
+
+        <div class="weather-badge">
+          <i class="fa-solid fa-cloud-sun"></i>
+
+          <span id="heroTemp"> --°C </span>
+
+          <span id="heroWeather"> Loading... </span>
+        </div>
+      </div>
+
+      <div class="scroll-down">
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
+    </section>
+    <section class="weather-section">
+      <div class="weather-overlay"></div>
+
+      <div id="weather-card">
+        <h2>Today's Weather</h2>
+
+        <div class="weather-main">
+          <div class="weather-icon">
+            <img id="weatherIcon" src="" alt="Weather" />
+          </div>
+
+          <div class="weather-temp">
+            <h1 id="temperature">28°C</h1>
+
+            <h3 id="weatherCondition">Clear Sky</h3>
+          </div>
+        </div>
+
+        <div class="weather-grid">
+          <div class="weather-item">
+            <i class="fa-solid fa-temperature-half"></i>
+
+            <h4>Feels Like</h4>
+
+            <p id="feelsLike">29°C</p>
+          </div>
+
+          <div class="weather-item">
+            <i class="fa-solid fa-droplet"></i>
+
+            <h4>Humidity</h4>
+
+            <p id="humidity">65%</p>
+          </div>
+
+          <div class="weather-item">
+            <i class="fa-solid fa-wind"></i>
+
+            <h4>Wind</h4>
+
+            <p id="wind">8 km/h</p>
+          </div>
+
+          <div class="weather-item">
+            <i class="fa-solid fa-eye"></i>
+
+            <h4>Visibility</h4>
+
+            <p id="visibility">10 km</p>
+          </div>
+
+          <div class="weather-item">
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <h4>Pressure</h4>
+
+            <p id="pressure">1012 hPa</p>
+          </div>
+
+          <div class="weather-item">
+            <i class="fa-solid fa-cloud"></i>
+
+            <h4>Clouds</h4>
+
+            <p id="clouds">20%</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="time-section">
+      <div class="time-container">
+        <div class="time-title">
+          <h2>Time & Sun Information</h2>
+
+          <p>Current local time and daylight details</p>
+        </div>
+
+        <div class="time-grid">
+          <div class="time-box">
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>Local Time</h3>
+
+            <p id="localTime">--:--</p>
+          </div>
+
+          <div class="time-box">
+            <i class="fa-solid fa-sun"></i>
+
+            <h3>Sunrise</h3>
+
+            <p id="sunrise">--:--</p>
+          </div>
+
+          <div class="time-box">
+            <i class="fa-solid fa-cloud-sun"></i>
+
+            <h3>Sunset</h3>
+
+            <p id="sunset">--:--</p>
+          </div>
+
+          <div class="time-box">
+            <i class="fa-solid fa-earth-americas"></i>
+
+            <h3>Time Zone</h3>
+
+            <p id="timezone">UTC</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div class="map-heading">
+        <h2>Explore on Map</h2>
+
+        <p>Find the exact location of the city.</p>
+      </div>
+
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="gallery-heading">
+        <h2>City Gallery</h2>
+
+        <p>Experience the beauty of the city through stunning photographs.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img id="gallery1" src="" alt="" />
+        </div>
+
+        <div class="gallery-card">
+          <img id="gallery2" src="" alt="" />
+        </div>
+
+        <div class="gallery-card">
+          <img id="gallery3" src="" alt="" />
+        </div>
+
+        <div class="gallery-card">
+          <img id="gallery4" src="" alt="" />
+        </div>
+
+        <div class="gallery-card">
+          <img id="gallery5" src="" alt="" />
+        </div>
+
+        <div class="gallery-card">
+          <img id="gallery6" src="" alt="" />
+        </div>
+      </div>
+    </section>
+    <footer class="footer" id="contact">
+      <div class="footer-container">
+        <div class="footer-box">
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="Logo" />
+
+            <h2>Earth<span>Lens</span></h2>
+          </div>
+
+          <p>
+            Discover cities around the world with live weather, maps, beautiful
+            galleries, and essential travel information—all in one place.
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="#city-info">City Info</a></li>
+
+            <li><a href="#map">Map</a></li>
+
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-box">
+          <h3>Contact</h3>
+
+          <p><i class="fa-solid fa-envelope"></i> earthlens@gmail.com</p>
+
+          <p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
+
+          <p><i class="fa-solid fa-location-dot"></i> India</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Follow Us</h3>
+
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="copyright">
+        <p>© 2026 EarthLens | Designed with ❤️ using HTML, CSS & JavaScript</p>
+      </div>
+
+      <button id="topBtn"><a href="./city.html"> <i class="fa-solid fa-arrow-up"></i></a>
+     
+      </button>
+    </footer>
+    <script src="city.js"></script>
+  </body>
+</html>

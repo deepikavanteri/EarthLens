@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  padding: 20px 6%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.logo img {
+  width: 150px;
+  height: 150px;
+  /* position: absolute; */
+  border-radius: 50%;
+  transition: 0.4s ease;
+}
+.logo img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px #3b82f6);
+}
+.nav-links {
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+  margin-left: auto;
+  margin-right: 40px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #f8f4f4;
+  font-size: 17px;
+  font-weight: 500;
+  border: 1px solid rgb(2, 0, 17);
+  border-radius: 15px;
+  padding: 4px 5px;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  transform: scale(2);
+  background-color: rgb(243, 243, 249);
+  filter: drop-shadow(0 0 20px rgb(252, 116, 225));
+  color: #640656;
+}
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+#bgvideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+.content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  color: white;
+  padding-left: 150px;
+  padding-bottom: 400px;
+}
+.content h1 {
+  font-size: 69px;
+  font-weight: larger;
+  width: 700px;
+  line-height: 1.1;
+}
+#city {
+  color: #3b82f6;
+}
+.content p {
+  font-size: 20px;
+  font-weight: 400;
+}
+#login-btn {
+  text-decoration: none;
+  padding: 3px 7px;
+  border-radius: 30px;
+  color: white;
+  border: 1px solid #f8f4f4;
+  transition: 0.4s;
+}
+#login-btn:hover {
+  transform: scale(1.2);
+  background-color: white;
+  color: black;
+  filter: drop-shadow(0 0 20px rgb(252, 116, 225));
+}
+.search-box {
+  margin-top: 400px;
+  margin-left: 150px;
+  width: 700px;
+  height: 70px;
+  background: rgba(255, green, blue, alpha);
+  backdrop-filter: blur(12px);
+  filter: drop-shadow(0 0 15px #3b82f6);
+  /* box-shadow: 3px 3px 2px blue; */
+  padding: 8px;
+  border: 50px;
+  border-radius: 35px;
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+}
+.search-box input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  padding-left: 30px;
+  font-size: 18px;
+}
+.search-box ::placeholder {
+  color: #d1d5db;
+}
+.search-box button {
+  width: 60px;
+  height: 55px;
+  border: 0.5px solid rgb(138, 138, 251);
+  border-radius: 50%;
+  border: 1px solid blue;
+  /* color: rgb(165, 161, 161); */
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+  background: blue;
+}
+.search-box button:hover {
+  transform: scale(1.1);
+  font-size: 30px;
+  background: #1d4ed8;
+}
+.popular {
+  margin-top: 10px;
+  margin-left: 150px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.popular span {
+  font-size: 18px;
+  color: #d1d5db;
+}
+.popular button {
+  padding: 4px 10px;
+  border-radius: 30px;
+  border: 0.2px solid rgb(109, 109, 251);
+  background: none;
+  color: white;
+  transition: 0.3s;
+}
+.popular button:hover {
+  transform: translateY(-3px);
+  background: #2563eb;
+}
+.card {
+  position: absolute;
+  color: white;
+  right: 80px;
+  bottom: 70px;
+  width: 240px;
+  border-radius:22px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  gap: 15px;
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.15);
+   box-shadow:0 0 20px rgba(0,140,255,.15);
+
+}
+.card:hover{
+    transform: translateY(-8px) scale(1.03);
+}
+.card img{
+  height: 80px;
+  margin-top: 30px;
+  border-radius: 50%;
+  transition: 0.8s;
+}
+.card img:hover{
+ transform: rotate(360deg) scale(1.2);
+}
+.topic{
+  border-top: 1px solid blue;
+  margin: 30px;
+  padding: 30px;
+  margin-left:30px ;
+  
+}
+.topic h2{
+  font-size: 35px;
+}
+.topic h3{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+/* Large Tablets */
+@media (max-width: 1024px) {
+
+  .navbar{
+    padding:20px 4%;
+  }
+
+  .logo img{
+    width:120px;
+    height:120px;
+  }
+
+  .nav-links{
+    gap:20px;
+    margin-right:0;
+  }
+
+  .content{
+    padding-left:60px;
+    padding-bottom:280px;
+  }
+
+  .content h1{
+    font-size:55px;
+    width:90%;
+  }
+
+  .search-box{
+    width:80%;
+    margin-left:60px;
+    margin-top:350px;
+  }
+
+  .popular{
+    margin-left:60px;
+  }
+
+  .card{
+    right:40px;
+    bottom:40px;
+  }
+}
+
+
+
+@media (max-width:768px){
+  .navbar{
+    flex-direction:column;
+    height:auto;
+    padding:15px;
+    gap:10px;
+  }
+  .logo img{
+    width:100px;
+    height:100px;
+  }
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin:0;
+  }
+  .nav-links a{
+    font-size:15px;
+  }
+  .content{
+    padding:120px 30px 0;
+    justify-content:flex-start;
+  }
+  .content h1{
+    width:100%;
+    font-size:45px;
+  }
+  .content p{
+    font-size:18px;
+  }
+  .search-box{
+    width:90%;
+    margin:300px auto 0;
+    height:60px;
+  }
+  .search-box input{
+    font-size:16px;
+  }
+  .search-box button{
+    width:50px;
+    height:50px;
+  }
+  .popular{
+    width:90%;
+    margin:15px auto;
+    justify-content:center;
+  }
+  .card{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    margin:40px auto;
+    width:280px;
+  }
+
+  .topic{
+    margin:20px;
+    padding:20px;
+  }
+  .topic h2{
+    font-size:30px;
+  }
+
+}
+@media (max-width:480px){
+  .logo img{
+    width:80px;
+    height:80px;
+  }
+
+  .nav-links{
+    gap:10px;
+  }
+  .nav-links a{
+    font-size:14px;
+    padding:5px 8px;
+  }
+  .content{
+    padding:110px 20px 0;
+  }
+  .content h1{
+    font-size:34px;
+    width:100%;
+  }
+  .content p{
+    font-size:16px;
+    margin-top:10px;
+  }
+  .search-box{
+    width:95%;
+    height:55px;
+    margin-top:260px;
+    border-radius:30px;
+  }
+  .search-box input{
+    font-size:15px;
+    padding-left:15px;
+  }
+  .search-box button{
+    width:45px;
+    height:45px;
+    font-size:18px;
+  }
+  .popular{
+    margin-top:15px;
+    gap:10px;
+  }
+  .popular span{
+    width:100%;
+    text-align:center;
+  }
+  .popular button{
+    font-size:13px;
+  }
+  .card{
+    width:90%;
+  }
+  .topic{
+    margin:15px;
+    padding:15px;
+  }
+  .topic h2{
+    font-size:26px;
+  }
+  .topic h3{
+    font-size:18px;
+  }
+
+}
